@@ -1,12 +1,12 @@
 {
-    "name": "risetechapps/has-to-upper",
+    "name": "risetechapps/to-upper-for-laravel",
     "description": "",
     "keywords": [
         "risetechapps",
         "Rise Tech",
         "to-upper"
     ],
-    "homepage": "https://github.com/risetechapps/to-upper",
+    "homepage": "https://github.com/risetechapps/to-upper-for-laravel",
     "license": "MIT",
     "type": "library",
     "authors": [
