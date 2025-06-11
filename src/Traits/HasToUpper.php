@@ -4,7 +4,6 @@ namespace RiseTechApps\ToUpper\Traits;
 
 trait HasToUpper
 {
-    protected $no_upper;
 
     public function setAttribute($key, $value): void
     {
@@ -17,11 +16,13 @@ trait HasToUpper
 
     private function shouldConvertToUpper($key): bool
     {
-        if (!empty($this->only_upper)) {
-            return in_array($key, $this->only_upper);
+        $onlyUpper = property_exists($this, 'only_upper') && is_array($this->only_upper) ? $this->only_upper : [];
+        if (!empty($onlyUpper)) {
+            return in_array($key, $onlyUpper);
         }
 
-        $no_upper = $this->no_upper ?? [];
+        $noUpper = property_exists($this, 'no_upper') && is_array($this->no_upper) ? $this->no_upper : [];
+
         return !$this->isIgnore($key) && !$this->isMorph($key) && !in_array($key, $no_upper);
     }
 
