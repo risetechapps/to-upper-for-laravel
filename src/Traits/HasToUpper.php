@@ -21,7 +21,7 @@ trait HasToUpper
             return in_array($key, $onlyUpper);
         }
 
-        $noUpper = property_exists($this, 'no_upper') && is_array($this->no_upper) ? $this->no_upper : [];
+        $no_upper = property_exists($this, 'no_upper') && is_array($this->no_upper) ? $this->no_upper : [];
 
         return !$this->isIgnore($key) && !$this->isMorph($key) && !in_array($key, $no_upper);
     }
