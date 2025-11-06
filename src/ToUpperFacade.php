@@ -5,16 +5,11 @@ namespace RiseTechApps\ToUpper;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \RiseTechApps\ToUpper\Skeleton\SkeletonClass
+ * @see \RiseTechApps\ToUpper\ToUpper
  */
 class ToUpperFacade extends Facade
 {
-    /**
-     * Get the registered name of the component.
-     *
-     * @return string
-     */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return 'to-upper';
     }

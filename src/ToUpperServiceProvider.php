@@ -6,19 +6,23 @@ use Illuminate\Support\ServiceProvider;
 
 class ToUpperServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     */
-    public function boot()
+    public function boot(): void
     {
-
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/config.php' => config_path('to-upper.php'),
+            ], 'config');
+        }
     }
 
-    /**
-     * Register the application services.
-     */
-    public function register()
+    public function register(): void
     {
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'to-upper');
 
+        $this->app->singleton(ToUpper::class, function ($app) {
+            return new ToUpper($app['config']->get('to-upper', []));
+        });
+
+        $this->app->alias(ToUpper::class, 'to-upper');
     }
 }
