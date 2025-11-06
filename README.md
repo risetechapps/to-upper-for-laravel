@@ -7,13 +7,13 @@ Um pacote Laravel que normaliza atributos de modelos para letras maiúsculas ant
 ## 🚀 Instalação
 
 ```bash
-composer require risetechapps/to-upper-for-laravel
+  composer require risetechapps/to-upper-for-laravel
 ```
 
 Opcionalmente publique a configuração para personalizar o comportamento global:
 
 ```bash
-php artisan vendor:publish --provider="RiseTechApps\\ToUpper\\ToUpperServiceProvider" --tag=config
+  php artisan vendor:publish --provider="RiseTechApps\\ToUpper\\ToUpperServiceProvider" --tag=config
 ```
 
 ---
@@ -97,8 +97,8 @@ return [
 O pacote possui uma suíte com Orchestra Testbench. Para executá-la:
 
 ```bash
-composer install
-composer test
+  composer install
+  composer test
 ```
 
 ---
